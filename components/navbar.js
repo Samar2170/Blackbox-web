@@ -13,9 +13,13 @@ const NavOptions = {
     'uploadFiles':{
         'name': 'Upload Files',
         'icon': 'upload',
-        'path': '/uploadFiles'
+        'path': '/input/upload-files'
     },
-    
+    'viewFiles':{
+        'name': 'View Files',
+        'icon': 'view',
+        'path': '/data/view-files'
+    },   
 }
 
 

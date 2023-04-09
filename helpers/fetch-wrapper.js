@@ -67,6 +67,11 @@ function authHeader(url) {
 
 function handleResponse(response) {
     return response.text().then(text => {
+        if (text.includes("Unauthorized")) {
+            alert("Session expired. Please login again");
+            localStorage.removeItem('user');
+            return Promise.reject(text)
+        } 
         const data = text && JSON.parse(text);
         if (!response.ok) {
             if ([401,403].includes(response.status) && userService.userValue) {
